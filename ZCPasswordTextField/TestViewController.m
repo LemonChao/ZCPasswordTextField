@@ -1,37 +1,26 @@
 //
-//  ViewController.m
+//  TestViewController.m
 //  ZCPasswordTextField
 //
 //  Created by zchao on 2021/1/20.
 //
 
-#import "ViewController.h"
-#import "ZCPasswordTextField.h"
 #import "TestViewController.h"
-
-@interface ViewController ()<UITextFieldDelegate>
+#import "ZCPasswordTextField.h"
+@interface TestViewController ()<UITextFieldDelegate>
 
 @end
 
-@implementation ViewController
+@implementation TestViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     ZCPasswordTextField *textField = [[ZCPasswordTextField alloc] initWithLength:6 style:ZCPasswordTextFieldBorderNormal spacing:10];
-    textField.frame = CGRectMake(20, 200, 335, 50);
+    textField.frame = CGRectMake(20, 400, 335, 50);
     textField.delegate = self;
     [self.view addSubview:textField];
-    
-}
 
-
-- (IBAction)jumpToTestVC:(UIButton *)sender {
-    
-    TestViewController *textVC = [[TestViewController alloc] init];
-    
-    [self.navigationController pushViewController:textVC animated:YES];
-    
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField reason:(UITextFieldDidEndEditingReason)reason {

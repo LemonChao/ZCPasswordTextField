@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TestViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zs2-9F-CAl" customClass="ZCPasswordTextField">
+                    <rect key="frame" x="20" y="104" width="335" height="50"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="0pM-5c-Y66">
+                            <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s9C-Si-Bfg">
+                                    <rect key="frame" x="0.0" y="0.0" width="83.666666666666671" height="50"/>
+                                    <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7rV-5U-ppz">
+                                    <rect key="frame" x="83.666666666666671" y="0.0" width="84.000000000000014" height="50"/>
+                                    <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SZH-gR-sOD">
+                                    <rect key="frame" x="167.66666666666666" y="0.0" width="83.666666666666657" height="50"/>
+                                    <color key="backgroundColor" systemColor="systemTealColor"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zzh-41-91W">
+                                    <rect key="frame" x="251.33333333333329" y="0.0" width="83.666666666666657" height="50"/>
+                                    <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                </view>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemTealColor"/>
+                    <constraints>
+                        <constraint firstItem="0pM-5c-Y66" firstAttribute="leading" secondItem="Zs2-9F-CAl" secondAttribute="leading" id="I9P-rT-hr4"/>
+                        <constraint firstItem="0pM-5c-Y66" firstAttribute="top" secondItem="Zs2-9F-CAl" secondAttribute="top" id="IeW-5V-n25"/>
+                        <constraint firstAttribute="width" constant="335" id="bKA-IK-dmj"/>
+                        <constraint firstAttribute="bottom" secondItem="0pM-5c-Y66" secondAttribute="bottom" id="cnz-4k-83G"/>
+                        <constraint firstAttribute="height" constant="50" id="t5K-M1-m99"/>
+                        <constraint firstAttribute="trailing" secondItem="0pM-5c-Y66" secondAttribute="trailing" id="u21-ms-QeG"/>
+                    </constraints>
+                </view>
+                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wRA-Bm-Ycs">
+                    <rect key="frame" x="24" y="240" width="335" height="34"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Zs2-9F-CAl" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="60" id="51Z-6L-5WC"/>
+                <constraint firstItem="Zs2-9F-CAl" firstAttribute="centerX" secondItem="Q5M-cg-NOt" secondAttribute="centerX" id="ZF8-gO-UMp"/>
+            </constraints>
+            <point key="canvasLocation" x="-681" y="35"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

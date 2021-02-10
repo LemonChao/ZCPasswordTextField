@@ -16,7 +16,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    ZCPasswordTextField *textField = [[ZCPasswordTextField alloc] initWithLength:6 style:ZCPasswordTextFieldBorderNormal spacing:10];
+    
+    
+    
+    ZCPasswordTextField *textField = [[ZCPasswordTextField alloc] initWithConfiguration:[ZCPasswordConfiguration configurationWithStyle:ZCPasswordTextFieldLineEncryption]];
     textField.frame = CGRectMake(20, 400, 335, 50);
     textField.delegate = self;
     [self.view addSubview:textField];

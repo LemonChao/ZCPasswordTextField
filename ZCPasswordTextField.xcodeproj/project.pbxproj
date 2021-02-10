@@ -10,7 +10,6 @@
 		6C83162D25B808A2008EE08F /* ZCPasswordItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C83162C25B808A2008EE08F /* ZCPasswordItem.m */; };
 		6C83163B25B81A24008EE08F /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C83163925B81A24008EE08F /* TestViewController.m */; };
 		6C83163C25B81A24008EE08F /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C83163A25B81A24008EE08F /* TestViewController.xib */; };
-		6C83164225B83390008EE08F /* ZCPasswordConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C83164125B83390008EE08F /* ZCPasswordConfiguration.m */; };
 		6CD8739C25B758B50009F2EC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD8739B25B758B50009F2EC /* AppDelegate.m */; };
 		6CD8739F25B758B50009F2EC /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD8739E25B758B50009F2EC /* SceneDelegate.m */; };
 		6CD873A225B758B50009F2EC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD873A125B758B50009F2EC /* ViewController.m */; };
@@ -46,8 +45,6 @@
 		6C83163825B81A24008EE08F /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		6C83163925B81A24008EE08F /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		6C83163A25B81A24008EE08F /* TestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
-		6C83164025B83390008EE08F /* ZCPasswordConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZCPasswordConfiguration.h; sourceTree = "<group>"; };
-		6C83164125B83390008EE08F /* ZCPasswordConfiguration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZCPasswordConfiguration.m; sourceTree = "<group>"; };
 		6CD8739725B758B50009F2EC /* ZCPasswordTextField.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZCPasswordTextField.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CD8739A25B758B50009F2EC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6CD8739B25B758B50009F2EC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -131,8 +128,6 @@
 				6CD873DC25B75A780009F2EC /* ZCPasswordTextField.m */,
 				6C83162B25B808A2008EE08F /* ZCPasswordItem.h */,
 				6C83162C25B808A2008EE08F /* ZCPasswordItem.m */,
-				6C83164025B83390008EE08F /* ZCPasswordConfiguration.h */,
-				6C83164125B83390008EE08F /* ZCPasswordConfiguration.m */,
 				6CD873A325B758B50009F2EC /* Main.storyboard */,
 				6CD873A625B758B90009F2EC /* Assets.xcassets */,
 				6CD873A825B758B90009F2EC /* LaunchScreen.storyboard */,
@@ -294,7 +289,6 @@
 				6CD8739C25B758B50009F2EC /* AppDelegate.m in Sources */,
 				6C83163B25B81A24008EE08F /* TestViewController.m in Sources */,
 				6C83162D25B808A2008EE08F /* ZCPasswordItem.m in Sources */,
-				6C83164225B83390008EE08F /* ZCPasswordConfiguration.m in Sources */,
 				6CD873AD25B758B90009F2EC /* main.m in Sources */,
 				6CD8739F25B758B50009F2EC /* SceneDelegate.m in Sources */,
 				6CD873DD25B75A780009F2EC /* ZCPasswordTextField.m in Sources */,

@@ -18,11 +18,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    ZCPasswordTextField *textField = [[ZCPasswordTextField alloc] initWithLength:6 style:ZCPasswordTextFieldBorderNormal spacing:10];
-    textField.frame = CGRectMake(20, 200, 335, 50);
+//    ZCPasswordTextField *textField = [[ZCPasswordTextField alloc] initWithLength:6 style:ZCPasswordTextFieldBorderNormal spacing:10];
+//    textField.frame = CGRectMake(20, 200, 335, 50);
+    ZCPasswordTextField *textField = [[ZCPasswordTextField alloc] initWithFrame:CGRectMake(20, 200, 335, 50)];
     textField.delegate = self;
     [self.view addSubview:textField];
-    
+    UICollectionView *table;
 }
 
 

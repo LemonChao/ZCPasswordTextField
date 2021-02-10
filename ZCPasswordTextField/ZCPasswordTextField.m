@@ -6,8 +6,6 @@
 //
 
 #import "ZCPasswordTextField.h"
-#import "ZCPasswordConfiguration.h"
-
 
 // 内部用stackView布局
 // item 画图方式实现
@@ -21,21 +19,27 @@
 @property(nonatomic, assign) NSUInteger currLen;
 @property(nonatomic, assign) NSUInteger oldLen;
 
-// 默认ZCPasswordTextFieldLineNormal
-@property(nonatomic, assign) ZCPasswordTextFieldStyle style;
-
 @end
 
 
 @implementation ZCPasswordTextField
 
-- (instancetype)initWithLength:(NSUInteger)length style:(ZCPasswordTextFieldStyle)style {
-    return [self initWithLength:length style:style spacing:0];
+
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    ZCPasswordConfiguration *config = [[ZCPasswordConfiguration alloc] init];
+    
+    return [self initWithFrame:frame configuration:config];
 }
 
-- (instancetype)initWithLength:(NSUInteger)length style:(ZCPasswordTextFieldStyle)style spacing:(CGFloat)spacing {
-    self = [super init];
-    
+- (instancetype)initWithConfiguration:(ZCPasswordConfiguration *)config
+{
+    return [self initWithFrame:CGRectZero configuration:config];
+}
+
+
+- (instancetype)initWithFrame:(CGRect)frame configuration:(ZCPasswordConfiguration *)config {
+    self = [super initWithFrame:frame];
     if (self) {
         // 这个属性不能设置为NO，否则布局错乱
 //        self.translatesAutoresizingMaskIntoConstraints = NO;
@@ -47,34 +51,25 @@
         self.textColor = [UIColor clearColor];
         self.tintColor = [UIColor clearColor];
         [self addTarget:self action:@selector(textFieldChanged:) forControlEvents:UIControlEventEditingChanged];
-        self.length = length;
+        self.backgroundColor = [UIColor whiteColor];
+       self.length = config.length;
+        self.config = config;
         self.currLen = 0;
         self.oldLen = 0;
-        self.backgroundColor = [UIColor whiteColor];
-        self.style = style;
-        self.items = [NSMutableArray arrayWithCapacity:length];
-        for (int i = 0; i < length; i++) {
-            ZCPasswordItem *item = [[ZCPasswordItem alloc] init];
-            item.style = style;
+        self.items = [NSMutableArray arrayWithCapacity:config.length];
+        for (int i = 0; i < config.length; i++) {
+            ZCPasswordItem *item = [[ZCPasswordItem alloc] initWithConfiguration:config];
             item.location = i;
-            item.count = length;
-            item.cornerRadius = 0;
-            if (i == 0) { // 初始化时第一个设置高亮状态
-                item.hightLighted = YES;
-            }
-            if (style == ZCPasswordTextFieldRectNormal || style == ZCPasswordTextFieldRectEncryption) {
-                item.backgroundColor = [UIColor lightGrayColor];
-            }
             [self.items addObject:item];
         }
         UIStackView *stackView = [[UIStackView alloc] initWithArrangedSubviews:self.items];
         stackView.axis = UILayoutConstraintAxisHorizontal;
         stackView.alignment = UIStackViewDistributionFill;
         stackView.distribution = UIStackViewDistributionFillEqually;
-        if (style == ZCPasswordTextFieldBorderNormal || style == ZCPasswordTextFieldBorderEncryption) {
+        if (config.style == ZCPasswordTextFieldBorderNormal || config.style == ZCPasswordTextFieldBorderEncryption) {
             stackView.spacing = 0;
         }else {
-            stackView.spacing = spacing;
+            stackView.spacing = config.spacing;
         }
         stackView.userInteractionEnabled = NO;
         stackView.backgroundColor = [UIColor clearColor];
@@ -90,12 +85,9 @@
         [self addConstraints:@[layoutCenterX,layoutCenterY,layoutWidth,layoutHeight]];
 
     }
-    
     [self performSelector:@selector(becomeFirstResponder) withObject:nil afterDelay:0.5];
-    
     return self;
 }
-
 
 - (void)textFieldChanged:(UITextField *)textField {
     _currLen = textField.text.length;
@@ -135,17 +127,6 @@
     }     
 }
 
-- (BOOL)isReachMaxCountCharacterRange:(NSRange)range replacmentString:(NSString *)string {
-    if (self.length < 1) {
-        return false;
-    }
-    NSString *new_string = [self.text stringByReplacingCharactersInRange:range withString:string];
-    if (new_string.length > self.length) {
-        return YES;
-    }
-    return false;
-}
-
 
 - (BOOL)canPerformAction:(SEL)action withSender:(id)sender {
     UIMenuController *menuController = [UIMenuController sharedMenuController];
@@ -157,6 +138,82 @@
 
 - (void)dealloc {
     NSLog(@"%@ dealloc", NSStringFromClass(self.class));
+}
+
+@end
+
+
+
+
+@implementation ZCPasswordConfiguration
+
+- (instancetype)init {
+    return [self initWithStyle:ZCPasswordTextFieldBorderEncryption];
+}
+
++ (ZCPasswordConfiguration *)configurationWithStyle:(ZCPasswordTextFieldStyle)style {
+    ZCPasswordConfiguration *config = [[self alloc] initWithStyle:style];
+    return config;
+}
+
+
+- (instancetype)initWithStyle:(ZCPasswordTextFieldStyle)style
+{
+    self = [super init];
+    if (self) {
+        self.style = style;
+        self.length = 6;
+        switch (style) {
+            case ZCPasswordTextFieldLineNormal:
+            case ZCPasswordTextFieldLineEncryption:
+            {
+                self.spacing = 10;
+                self.itemBGColor = [UIColor clearColor];
+                self.titleColor = [UIColor blackColor];
+                self.cornerRadius = 0;
+                self.font = [UIFont systemFontOfSize:20 weight:UIFontWeightMedium];
+                self.hightBorderColor = [UIColor blueColor];
+                self.borderColor = [UIColor lightGrayColor];
+            }
+                break;
+            case ZCPasswordTextFieldBorderNormal:
+            case ZCPasswordTextFieldBorderEncryption:
+            {
+                self.spacing = 0;
+                self.itemBGColor = [UIColor whiteColor];
+                self.titleColor = [UIColor blackColor];
+                self.cornerRadius = 8;
+                self.font = [UIFont systemFontOfSize:20 weight:UIFontWeightMedium];
+                self.hightBorderColor = [UIColor blueColor];
+                self.borderColor = [UIColor blackColor];
+            }
+                break;
+            case ZCPasswordTextFieldRectNormal:
+            case ZCPasswordTextFieldRectEncryption:
+            {
+                self.spacing = 10;
+                self.itemBGColor = [UIColor lightGrayColor];
+                self.titleColor = [UIColor blackColor];
+                self.cornerRadius = 0;
+                self.font = [UIFont systemFontOfSize:20 weight:UIFontWeightMedium];
+                self.hightBorderColor = [UIColor blueColor];
+                self.borderColor = [UIColor lightGrayColor];
+            }
+                break;
+       default://Border
+            {
+                self.spacing = 0;
+                self.itemBGColor = [UIColor whiteColor];
+                self.titleColor = [UIColor blackColor];
+                self.cornerRadius = 0;
+                self.font = [UIFont systemFontOfSize:20 weight:UIFontWeightMedium];
+                self.hightBorderColor = [UIColor blueColor];
+                self.borderColor = [UIColor blackColor];
+            }
+                break;
+        }
+    }
+    return self;
 }
 
 @end

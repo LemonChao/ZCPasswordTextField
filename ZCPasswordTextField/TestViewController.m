@@ -6,7 +6,6 @@
 //
 
 #import "TestViewController.h"
-#import "ZCPasswordTextField.h"
 @interface TestViewController ()<UITextFieldDelegate>
 
 @end
@@ -16,14 +15,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
-    
-    
-    ZCPasswordTextField *textField = [[ZCPasswordTextField alloc] initWithConfiguration:[ZCPasswordConfiguration configurationWithStyle:ZCPasswordTextFieldLineEncryption]];
-    textField.frame = CGRectMake(20, 400, 335, 50);
-    textField.delegate = self;
-    [self.view addSubview:textField];
+    self.field.delegate = self;
+    [self.view addSubview:self.field];
 
+    if (self.field.config.style == ZCPasswordTextFieldRectEncryption) {
+        self.field.translatesAutoresizingMaskIntoConstraints = NO;
+        NSLayoutConstraint *layoutTop = [NSLayoutConstraint constraintWithItem:self.field attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1.0 constant:200.0];
+        NSLayoutConstraint *layoutLeft = [NSLayoutConstraint constraintWithItem:self.field attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeft multiplier:1.0 constant:20];
+        NSLayoutConstraint *layoutRight = [NSLayoutConstraint constraintWithItem:self.field attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeRight multiplier:1.0 constant:-20];
+        NSLayoutConstraint *layoutHeight = [NSLayoutConstraint constraintWithItem:self.field attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeHeight multiplier:1.0 constant:50];
+        
+        [self.view addConstraints:@[layoutTop,layoutLeft,layoutRight,layoutHeight]];
+   }
+    
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField reason:(UITextFieldDidEndEditingReason)reason {

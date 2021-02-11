@@ -6,10 +6,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZCPasswordTextField.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TestViewController : UIViewController
+
+@property(nonatomic, strong) ZCPasswordTextField *field;
 
 @end
 

@@ -6,7 +6,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ZCPasswordItem.h"
 
 typedef NS_ENUM(NSInteger,ZCPasswordTextFieldStyle) {
     ZCPasswordTextFieldLineNormal       = 0,    //下划线明文显示
@@ -32,12 +31,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, strong) ZCPasswordConfiguration *config;
 
 
+/// 初始化
+/// @param config 密码框样式
 - (instancetype)initWithConfiguration:(ZCPasswordConfiguration *)config;
 
 
 /// 初始化
-/// @param frame 输入的总长度 默认6
-/// @param config 默认ZCPasswordTextFieldLineNormal
+/// @param frame frame
+/// @param config 密码框样式
 - (instancetype)initWithFrame:(CGRect)frame configuration:(ZCPasswordConfiguration *)config;
 
 @end
@@ -50,17 +51,19 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ZCPasswordConfiguration : NSObject
 
+// default: ZCPasswordTextFieldBorderEncryption
 @property(nonatomic, assign) ZCPasswordTextFieldStyle style;
 
-// field 密码长度
+// field 密码长度.默认6
 @property(nonatomic, assign) NSUInteger length;
-// item 横向间距 (只在ZCPasswordTextFieldBorderNormal/Encryption样式下无效)
+
+// item 横向间距.默认10 (只在ZCPasswordTextFieldBorderNormal/Encryption样式下无效)
 @property(nonatomic, assign) NSUInteger spacing;
 
 // item 背景色
 @property(nonatomic, strong) UIColor *itemBGColor;
 
-// item 字体颜色
+// item 字体颜色.默认blackColor
 @property(nonatomic, strong) UIColor *titleColor;
 
 // item 边框圆角， 默认0(只在ZCPasswordTextFieldBorderNormal/Encryption样式下有效)
@@ -69,10 +72,10 @@ NS_ASSUME_NONNULL_BEGIN
 // item 绘图字体
 @property(nonatomic, strong) UIFont *font;
 
-// item 高亮时边框颜色 (只在ZCPasswordTextFieldLineNormal/Encryption样式下有效)
+// item 高亮时边框颜色.默认blueColor (只在ZCPasswordTextFieldLineNormal/Encryption样式下有效)
 @property(nonatomic, strong) UIColor *hightBorderColor;
 
-// item 边框颜色
+// item 边框颜色.默认blackColor
 @property(nonatomic, strong) UIColor *borderColor;
 
 

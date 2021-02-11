@@ -6,9 +6,7 @@
 //
 
 #import "ZCPasswordTextField.h"
-
-// 内部用stackView布局
-// item 画图方式实现
+#import "ZCPasswordItem.h"
 
 @interface ZCPasswordTextField ()
 
@@ -52,8 +50,8 @@
         self.tintColor = [UIColor clearColor];
         [self addTarget:self action:@selector(textFieldChanged:) forControlEvents:UIControlEventEditingChanged];
         self.backgroundColor = [UIColor whiteColor];
-       self.length = config.length;
         self.config = config;
+       self.length = config.length;
         self.currLen = 0;
         self.oldLen = 0;
         self.items = [NSMutableArray arrayWithCapacity:config.length];
@@ -85,7 +83,7 @@
         [self addConstraints:@[layoutCenterX,layoutCenterY,layoutWidth,layoutHeight]];
 
     }
-    [self performSelector:@selector(becomeFirstResponder) withObject:nil afterDelay:0.5];
+    [self performSelector:@selector(becomeFirstResponder) withObject:nil afterDelay:0.3];
     return self;
 }
 
@@ -95,7 +93,6 @@
     // 1：输入变长
     static BOOL increase = 1;
     increase = _currLen > _oldLen;
-    NSLog(@"目前输入显示--%@--当前长度%ld--上次长度%ld--增加%d", textField.text, _currLen,_oldLen, increase);
     if (increase) {// 输入变长
         ZCPasswordItem *item = [self.items objectAtIndex:_currLen-1];
         item.title = [textField.text substringFromIndex:_currLen-1];
@@ -122,7 +119,6 @@
     
     _oldLen = _currLen;
     if (_currLen == self.length) {
-        NSLog(@"---输入完毕---");
         [self resignFirstResponder];
     }     
 }
@@ -131,14 +127,14 @@
 - (BOOL)canPerformAction:(SEL)action withSender:(id)sender {
     UIMenuController *menuController = [UIMenuController sharedMenuController];
     if (menuController) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
         menuController.menuVisible = NO;
+#pragma clang diagnostic pop
     }
     return false;
 }
 
-- (void)dealloc {
-    NSLog(@"%@ dealloc", NSStringFromClass(self.class));
-}
 
 @end
 
@@ -182,7 +178,7 @@
                 self.spacing = 0;
                 self.itemBGColor = [UIColor whiteColor];
                 self.titleColor = [UIColor blackColor];
-                self.cornerRadius = 8;
+                self.cornerRadius = 0;
                 self.font = [UIFont systemFontOfSize:20 weight:UIFontWeightMedium];
                 self.hightBorderColor = [UIColor blueColor];
                 self.borderColor = [UIColor blackColor];

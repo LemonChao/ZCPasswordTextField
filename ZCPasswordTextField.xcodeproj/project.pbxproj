@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6C83162D25B808A2008EE08F /* ZCPasswordItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C83162C25B808A2008EE08F /* ZCPasswordItem.m */; };
+		6C6BC3B425D501DE0009CBC5 /* ZCPasswordItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6BC3B025D501DE0009CBC5 /* ZCPasswordItem.m */; };
+		6C6BC3B525D501DE0009CBC5 /* ZCPasswordTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6BC3B325D501DE0009CBC5 /* ZCPasswordTextField.m */; };
 		6C83163B25B81A24008EE08F /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C83163925B81A24008EE08F /* TestViewController.m */; };
 		6CD8739C25B758B50009F2EC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD8739B25B758B50009F2EC /* AppDelegate.m */; };
 		6CD8739F25B758B50009F2EC /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD8739E25B758B50009F2EC /* SceneDelegate.m */; };
@@ -18,7 +19,6 @@
 		6CD873AD25B758B90009F2EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD873AC25B758B90009F2EC /* main.m */; };
 		6CD873B725B758B90009F2EC /* ZCPasswordTextFieldTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD873B625B758B90009F2EC /* ZCPasswordTextFieldTests.m */; };
 		6CD873C225B758B90009F2EC /* ZCPasswordTextFieldUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD873C125B758B90009F2EC /* ZCPasswordTextFieldUITests.m */; };
-		6CD873DD25B75A780009F2EC /* ZCPasswordTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD873DC25B75A780009F2EC /* ZCPasswordTextField.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6C83162B25B808A2008EE08F /* ZCPasswordItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZCPasswordItem.h; sourceTree = "<group>"; };
-		6C83162C25B808A2008EE08F /* ZCPasswordItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZCPasswordItem.m; sourceTree = "<group>"; };
+		6C6BC3B025D501DE0009CBC5 /* ZCPasswordItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCPasswordItem.m; sourceTree = "<group>"; };
+		6C6BC3B125D501DE0009CBC5 /* ZCPasswordTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCPasswordTextField.h; sourceTree = "<group>"; };
+		6C6BC3B225D501DE0009CBC5 /* ZCPasswordItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCPasswordItem.h; sourceTree = "<group>"; };
+		6C6BC3B325D501DE0009CBC5 /* ZCPasswordTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCPasswordTextField.m; sourceTree = "<group>"; };
 		6C83163825B81A24008EE08F /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		6C83163925B81A24008EE08F /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		6CD8739725B758B50009F2EC /* ZCPasswordTextField.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZCPasswordTextField.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,8 +63,6 @@
 		6CD873BD25B758B90009F2EC /* ZCPasswordTextFieldUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZCPasswordTextFieldUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CD873C125B758B90009F2EC /* ZCPasswordTextFieldUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZCPasswordTextFieldUITests.m; sourceTree = "<group>"; };
 		6CD873C325B758B90009F2EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6CD873DB25B75A780009F2EC /* ZCPasswordTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZCPasswordTextField.h; sourceTree = "<group>"; };
-		6CD873DC25B75A780009F2EC /* ZCPasswordTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZCPasswordTextField.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +90,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6C6BC3AF25D501AD0009CBC5 /* ZCPasswordTextField */ = {
+			isa = PBXGroup;
+			children = (
+				6C6BC3B225D501DE0009CBC5 /* ZCPasswordItem.h */,
+				6C6BC3B025D501DE0009CBC5 /* ZCPasswordItem.m */,
+				6C6BC3B125D501DE0009CBC5 /* ZCPasswordTextField.h */,
+				6C6BC3B325D501DE0009CBC5 /* ZCPasswordTextField.m */,
+			);
+			path = ZCPasswordTextField;
+			sourceTree = "<group>";
+		};
 		6CD8738E25B758B50009F2EC = {
 			isa = PBXGroup;
 			children = (
@@ -121,10 +132,7 @@
 				6CD873A125B758B50009F2EC /* ViewController.m */,
 				6C83163825B81A24008EE08F /* TestViewController.h */,
 				6C83163925B81A24008EE08F /* TestViewController.m */,
-				6CD873DB25B75A780009F2EC /* ZCPasswordTextField.h */,
-				6CD873DC25B75A780009F2EC /* ZCPasswordTextField.m */,
-				6C83162B25B808A2008EE08F /* ZCPasswordItem.h */,
-				6C83162C25B808A2008EE08F /* ZCPasswordItem.m */,
+				6C6BC3AF25D501AD0009CBC5 /* ZCPasswordTextField */,
 				6CD873A325B758B50009F2EC /* Main.storyboard */,
 				6CD873A625B758B90009F2EC /* Assets.xcassets */,
 				6CD873A825B758B90009F2EC /* LaunchScreen.storyboard */,
@@ -282,12 +290,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CD873A225B758B50009F2EC /* ViewController.m in Sources */,
+				6C6BC3B525D501DE0009CBC5 /* ZCPasswordTextField.m in Sources */,
 				6CD8739C25B758B50009F2EC /* AppDelegate.m in Sources */,
+				6C6BC3B425D501DE0009CBC5 /* ZCPasswordItem.m in Sources */,
 				6C83163B25B81A24008EE08F /* TestViewController.m in Sources */,
-				6C83162D25B808A2008EE08F /* ZCPasswordItem.m in Sources */,
 				6CD873AD25B758B90009F2EC /* main.m in Sources */,
 				6CD8739F25B758B50009F2EC /* SceneDelegate.m in Sources */,
-				6CD873DD25B75A780009F2EC /* ZCPasswordTextField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

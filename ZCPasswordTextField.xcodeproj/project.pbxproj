@@ -93,10 +93,10 @@
 		6C6BC3AF25D501AD0009CBC5 /* ZCPasswordTextField */ = {
 			isa = PBXGroup;
 			children = (
-				6C6BC3B225D501DE0009CBC5 /* ZCPasswordItem.h */,
-				6C6BC3B025D501DE0009CBC5 /* ZCPasswordItem.m */,
 				6C6BC3B125D501DE0009CBC5 /* ZCPasswordTextField.h */,
 				6C6BC3B325D501DE0009CBC5 /* ZCPasswordTextField.m */,
+				6C6BC3B225D501DE0009CBC5 /* ZCPasswordItem.h */,
+				6C6BC3B025D501DE0009CBC5 /* ZCPasswordItem.m */,
 			);
 			path = ZCPasswordTextField;
 			sourceTree = "<group>";

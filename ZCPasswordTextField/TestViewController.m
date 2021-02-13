@@ -14,7 +14,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.view.backgroundColor = [UIColor whiteColor];
     self.field.delegate = self;
     [self.view addSubview:self.field];
 
@@ -32,6 +32,9 @@
 
 - (void)textFieldDidEndEditing:(UITextField *)textField reason:(UITextFieldDidEndEditingReason)reason {
     NSLog(@"text:%@--%ld",textField.text, reason);
+    if (reason == UITextFieldDidEndEditingReasonCommitted) {
+        // your code
+    }
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {

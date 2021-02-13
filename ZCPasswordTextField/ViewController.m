@@ -99,7 +99,7 @@
         field = [[ZCPasswordTextField alloc] initWithConfiguration:config];
     }
     testVC.field = field;
-
+    testVC.title = title;
     [self.navigationController pushViewController:testVC animated:YES];
 }
 

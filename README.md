@@ -7,14 +7,14 @@
 * 直接使用,git clone之后,把相关文件资源拉入到自己的项目中
 ---
 ## 使用方式
-到达指定长度后触发`UITextFieldDelegate`代理事件停止接收键盘输入
+到达指定长度后触发`UITextFieldDelegate`代理事件停止接收键盘输入，拦截多余输入
 ```
  - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
      NSString *new_string = [textField.text stringByReplacingCharactersInRange:range withString:string];
      return new_string.length <= 6;
  }
 ```
-输入到指定位数触发`UITextFieldDelegate`代理事件
+达到指定位数键盘收回，输入完成触发`UITextFieldDelegate`代理
 ```
 - (void)textFieldDidEndEditing:(UITextField *)textField reason:(UITextFieldDidEndEditingReason)reason {
     NSLog(@"text:%@--%ld",textField.text, reason);
